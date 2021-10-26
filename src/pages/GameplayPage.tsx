@@ -17,6 +17,7 @@ const GameplayPage: React.FC<{}> = () => {
 
     const handleAnswer = (boo: boolean) => {
         if (currStatementIndex >= len - 1) {
+            dispatch(answerStatement(currStatementIndex, boo));
             history.push("score");
         } else {
             dispatch(answerStatement(currStatementIndex, boo));
@@ -24,13 +25,11 @@ const GameplayPage: React.FC<{}> = () => {
         }
     };
 
-    if (len === 0) return <span>Loading</span>;
+    if (len === 0) return <span className={"spinner"}></span>;
 
     const percentage = ((currStatementIndex + 1) / len) * 100;
-    console.log(percentage);
 
     const currSM = statements[currStatementIndex];
-    console.log(currSM.question);
     return (
         <div className={"backgroundOfGameplay"}>
             <div className={"playBox"}>
