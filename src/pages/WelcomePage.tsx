@@ -63,10 +63,10 @@ const WelcomePage: React.FC<{}> = () => {
                     </div>
                     <div className={"cont2"}>
                         <div className={"info"}>
-                            <span>
+                            <div>
                                 <StarIcon className={"infoIcon starIcon"} />
-                            </span>
-                            <span className={"infoTitle"}>Amount</span>
+                            </div>
+                            <div className={"infoTitle"}>Amount</div>
                         </div>
                         <input
                             className={"amountInput"}

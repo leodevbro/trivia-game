@@ -29,14 +29,17 @@ const ScorePage: React.FC<{}> = () => {
                     <div className={"profileIconFrame"}>
                         <ProfileIcon className={"profileIcon"} />
                     </div>
-                    <div>You scored</div>
-                    <div>
-                        <span>{score}</span>/<span>{len}</span>
+                    <div className={"numbering"}>
+                        <div className={"youScored"}>You scored</div>
+                        <div className={"numbers"}>
+                            <span className={"score"}>{score}</span>/
+                            <span className={"len"}>{len}</span>
+                        </div>
                     </div>
                 </div>
                 <ScoreAsStars percentage={(100 * score) / len} count={len} />
 
-                <div className={"eachAnswer"}>
+                <div className={"allAnswers"}>
                     {statements.map((statement, i) => {
                         const isCorrect =
                             statement.answerOfUser === statement.correct_answer;

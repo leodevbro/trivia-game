@@ -13,15 +13,6 @@ const GameplayPage: React.FC<{}> = () => {
     );
     const len = statements.length;
 
-    const stRef = React.useRef(statements);
-    stRef.current = statements;
-
-    useEffect(() => {
-        setTimeout(() => {
-            console.log(stRef.current);
-        }, 3000);
-    }, []);
-
     const [currStatementIndex, setCurrStatementIndex] = useState(0);
 
     const handleAnswer = (boo: boolean) => {
@@ -47,9 +38,14 @@ const GameplayPage: React.FC<{}> = () => {
                 <div className={"levelName"}>Level 1</div>
 
                 <div className={"coolFiller"}>
-                    <div className={"numbering"}>
-                        <span>{currStatementIndex + 1}</span>/<span>{len}</span>
+                    <div className={"numbers"}>
+                        <span className={"score"}>
+                            {currStatementIndex + 1}
+                        </span>
+                        <span className={"slash"}>/</span>
+                        <span className={"len"}>{len}</span>
                     </div>
+
                     <div className={"fullLine"}>
                         <div
                             style={{ width: `${percentage}%` }}

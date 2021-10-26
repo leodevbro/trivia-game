@@ -39,12 +39,29 @@ body {
     position: relative;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.473);
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #ffa67a 0%, #ff6065 100%);
+    border-radius: 100px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
 .goButton {
     position: relative;
     display: block;
     text-decoration: none;
     height: 95px;
     width: 446px;
+
+    margin: 20px;
 
     border-radius: 14px;
     background: #c65252;
@@ -75,6 +92,7 @@ body {
 }
 
 .scoreAsStars {
+    margin: 10px 5px 30px 5px;
     .starIcon {
         &.scored {
             * {
@@ -97,6 +115,8 @@ body {
 
     border-radius: 14px;
 
+    padding: 10px 20px;
+
     &.correct {
         background: #fffbfa;
     }
@@ -109,9 +129,18 @@ body {
         display: flex;
         text-align: center;
         align-items: center;
-        padding: 10px 25px;
+
         width: calc(100% - 30px);
         height: 100%;
+
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+
+        color: #464faccb;
+
+        margin-right: 20px;
     }
 
     .iconBox {
@@ -137,7 +166,6 @@ body {
     height: 100%;
 
     .introBox {
-        border: 1px solid green;
         width: 700px;
         display: flex;
         justify-content: center;
@@ -160,12 +188,20 @@ body {
         }
         .inputContainer {
             .cont1 {
+                margin-bottom: 30px;
                 .info {
+                    display: flex;
+
+                    align-items: center;
+                    flex-wrap: no-wrap;
+
+                    margin-bottom: 8px;
                     .infoIcon {
                         width: 33px;
                         height: 36px;
                     }
                     .infoTitle {
+                        margin-left: 15px;
                         color: #f7a491;
 
                         font-size: 15px;
@@ -179,21 +215,45 @@ body {
 
                 .difficultySelect {
                     outline: none;
-                    border: none;
-                    border-radius: 5px;
+                    color: white;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 27px;
+                    letter-spacing: 0px;
+                    text-align: left;
+                    height: 75px;
+                    width: 445px;
+                    border-radius: 10px;
+                    padding: 20px;
+
+                    border: 1px solid white;
+                    background: none;
                     &:focus {
                         outline: none;
+                    }
+
+                    option {
+                        color: white;
+                        background-color: #4751c0;
                     }
                 }
             }
 
             .cont2 {
                 .info {
+                    display: flex;
+
+                    align-items: center;
+                    flex-wrap: no-wrap;
+                    margin-bottom: 8px;
+
                     .infoIcon {
                         width: 35px;
                         height: 35px;
                     }
                     .infoTitle {
+                        margin-left: 15px;
                         color: #f7a491;
                         font-size: 15px;
                         font-style: normal;
@@ -205,8 +265,22 @@ body {
                 }
                 .amountInput {
                     outline: none;
-                    border: none;
-                    border-radius: 5px;
+                    border: 1px solid white;
+                    background: none;
+                    color: white;
+
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 27px;
+                    letter-spacing: 0px;
+                    text-align: left;
+                    padding: 20px;
+
+                    height: 75px;
+                    width: 445px;
+                    border-radius: 10px;
+
                     &:focus {
                         outline: none;
                     }
@@ -217,21 +291,56 @@ body {
 }
 
 .backgroundOfGameplay {
-    border: 1px solid blue;
     position: relative;
     height: 100%;
     display: flex;
     justify-content: center;
     .playBox {
         width: 700px;
-        border: 1px solid red;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
         h1 {
+            font-size: 81px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 101px;
+            letter-spacing: 0.05em;
+            text-align: center;
+
+            color: #4953be;
         }
         .levelName {
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 33px;
+            letter-spacing: 0.5em;
+            text-align: center;
+
+            color: #4953be;
         }
 
         .coolFiller {
-            .numbering {
+            margin: 30px 5px;
+            .numbers {
+                color: #4953be;
+                .score {
+                    color: #ff7878;
+                    font-weight: 700;
+                    font-size: 30px;
+                }
+                .slash {
+                    font-size: 25px;
+                    font-weight: 700;
+                }
+                .len {
+                    color: #4953be;
+                    font-weight: 500;
+                    font-size: 25px;
+                }
             }
             .fullLine {
                 background-color: #dbdeff;
@@ -253,10 +362,26 @@ body {
         }
 
         .statement {
+            width: 631px;
+            margin: 20px 5px;
+
+            font-size: 31px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 45px;
+            letter-spacing: 0em;
+            text-align: center;
+
+            color: #4953be;
         }
 
         .answer {
             .buttonTrue {
+                display: flex;
+                justify-content: center;
+
+                align-items: center;
+
                 background-color: #424a9e;
                 height: 89px;
                 width: 446px;
@@ -271,8 +396,21 @@ body {
                 letter-spacing: 0em;
                 text-align: center;
                 color: white;
+
+                margin-bottom: 37px;
+
+                &:hover {
+                    cursor: pointer;
+                    box-shadow: 0 20px 50px rgba(73, 83, 190, 0.7);
+                    transition: all 0.5s ease;
+                }
             }
             .buttonFalse {
+                display: flex;
+                justify-content: center;
+
+                align-items: center;
+
                 border: 2px solid #4953be;
                 height: 89px;
                 width: 446px;
@@ -285,6 +423,12 @@ body {
                 line-height: 31px;
                 letter-spacing: 0em;
                 text-align: center;
+
+                &:hover {
+                    cursor: pointer;
+                    box-shadow: 0 20px 50px rgba(235, 110, 38, 0.7);
+                    transition: all 0.5s ease;
+                }
             }
         }
     }
@@ -298,7 +442,15 @@ body {
     justify-content: center;
 
     .columnBox {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
         .scoreBriefInfo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
             .profileIconFrame {
                 width: 52px;
                 height: 52px;
@@ -310,10 +462,42 @@ body {
                     width: 100%;
                 }
             }
+            .numbering {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: nowrap;
+                font-size: 30px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 25px;
+
+                color: white;
+
+                .youScored {
+                    margin: 20px;
+                }
+
+                .numbers {
+                    color: white;
+                    .score {
+                        color: #ff7878;
+                        font-weight: 700;
+                        font-size: 30px;
+                    }
+                    .len {
+                        color: white;
+                        font-weight: 500;
+                        font-size: 25px;
+                    }
+                }
+            }
         }
-        .scoreAsStars {
-        }
-        .eachAnswer {
+        .allAnswers {
+            max-height: 500px;
+            overflow-y: scroll;
+            padding: 10px;
+            scrollbar-width: thin;
         }
     }
 }
