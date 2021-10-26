@@ -1,0 +1,319 @@
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: Quicksand;
+}
+
+html {
+    position: relative;
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    position: relative;
+}
+
+#root {
+    height: 100vh;
+    position: relative;
+}
+
+.goButton {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    height: 95px;
+    width: 446px;
+
+    border-radius: 14px;
+    background: #c65252;
+    .subShape {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        width: 100%;
+        height: 89px;
+        border-radius: 14px;
+        background: linear-gradient(90deg, #ffa67a 0%, #ff6065 100%);
+
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 31px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &:hover {
+        cursor: pointer;
+        & .subShape {
+            height: 92px;
+        }
+    }
+}
+
+.scoreAsStars {
+    .starIcon {
+        &.scored {
+            * {
+                fill: #ff7c7c;
+            }
+        }
+
+        &.unScored {
+            //
+        }
+    }
+}
+
+.answerItem {
+    display: flex;
+    height: 79px;
+    width: 620px;
+
+    margin-bottom: 24px;
+
+    border-radius: 14px;
+
+    &.correct {
+        background: #fffbfa;
+    }
+
+    &.incorrect {
+        background: #ffdbdb;
+    }
+
+    .text {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        padding: 10px 25px;
+        width: calc(100% - 30px);
+        height: 100%;
+    }
+
+    .iconBox {
+        width: 20px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &.correct {
+        }
+        &.incorrect {
+        }
+    }
+}
+
+.backgroundOfWelcome {
+    background-color: #4751c0;
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+    // height: 900px;
+    height: 100%;
+
+    .introBox {
+        border: 1px solid green;
+        width: 700px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: no-wrap;
+        flex-direction: column;
+        h1 {
+            color: white;
+            font-size: 46px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 58px;
+
+            text-align: center;
+        }
+        .superTitle {
+            width: 100%;
+            max-width: 573px;
+            max-height: 240px;
+        }
+        .inputContainer {
+            .cont1 {
+                .info {
+                    .infoIcon {
+                        width: 33px;
+                        height: 36px;
+                    }
+                    .infoTitle {
+                        color: #f7a491;
+
+                        font-size: 15px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 23px;
+
+                        text-align: left;
+                    }
+                }
+
+                .difficultySelect {
+                    outline: none;
+                    border: none;
+                    border-radius: 5px;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+
+            .cont2 {
+                .info {
+                    .infoIcon {
+                        width: 35px;
+                        height: 35px;
+                    }
+                    .infoTitle {
+                        color: #f7a491;
+                        font-size: 15px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 23px;
+
+                        text-align: left;
+                    }
+                }
+                .amountInput {
+                    outline: none;
+                    border: none;
+                    border-radius: 5px;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.backgroundOfGameplay {
+    border: 1px solid blue;
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    .playBox {
+        width: 700px;
+        border: 1px solid red;
+        h1 {
+        }
+        .levelName {
+        }
+
+        .coolFiller {
+            .numbering {
+            }
+            .fullLine {
+                background-color: #dbdeff;
+                height: 5px;
+                width: 406px;
+
+                border-radius: 20px;
+
+                .fillerLine {
+                    height: 100%;
+                    border-radius: 20px;
+                    background: linear-gradient(
+                        180deg,
+                        #ff7878 0%,
+                        #ff7878 100%
+                    );
+                }
+            }
+        }
+
+        .statement {
+        }
+
+        .answer {
+            .buttonTrue {
+                background-color: #424a9e;
+                height: 89px;
+                width: 446px;
+
+                border-radius: 14px;
+
+                font-family: Inter;
+                font-size: 21px;
+                font-style: normal;
+                font-weight: 900;
+                line-height: 31px;
+                letter-spacing: 0em;
+                text-align: center;
+                color: white;
+            }
+            .buttonFalse {
+                border: 2px solid #4953be;
+                height: 89px;
+                width: 446px;
+
+                border-radius: 14px;
+
+                font-size: 21px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 31px;
+                letter-spacing: 0em;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.backgroundOfScore {
+    background-color: #4751c0;
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+    .columnBox {
+        .scoreBriefInfo {
+            .profileIconFrame {
+                width: 52px;
+                height: 52px;
+                position: relative;
+                background-color: white;
+                border-radius: 100px;
+                .profileIcon {
+                    position: relative;
+                    width: 100%;
+                }
+            }
+        }
+        .scoreAsStars {
+        }
+        .eachAnswer {
+        }
+    }
+}

@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./App.css";
+import "./App.scss";
 
 import {
     BrowserRouter as Router,
@@ -9,19 +9,20 @@ import {
     Redirect,
 } from "react-router-dom";
 
-import DashboardPage from "./pages/DashboardPage";
-import PostsPage from "./pages/PostsPage";
-import { Navbar } from "./components/NavBar";
-import SinglePostPage from "./pages/SinglePostPage";
+
+
+import WelcomePage from "./pages/WelcomePage";
+import GameplayPage from "./pages/GameplayPage";
+import ScorePage from "./pages/ScorePage";
 
 function App() {
     return (
         <Router>
-            <Navbar />
+            {/* <Navbar /> */}
             <Switch>
-                <Route exact path="/" component={DashboardPage} />
-                <Route exact path="/posts" component={PostsPage} />
-                <Route exact path="/posts/:id" component={SinglePostPage} />
+                <Route exact path="/" component={WelcomePage} />
+                <Route exact path="/playing" component={GameplayPage} />
+                <Route exact path="/score" component={ScorePage} />
                 <Redirect to="/" />
             </Switch>
         </Router>
