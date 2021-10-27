@@ -1,3 +1,20 @@
+This is a **TRIVIA** game. A user can answer some questions with `true` of `false` statements.
+
+Used technology: `React.js`, `TypeScript`, `SCSS`, `Redux (classic)`, `React Router`.
+
+Codesandbox Live: <a href="https://codesandbox.io/s/small-cache-lwfxe">https://codesandbox.io/s/small-cache-lwfxe</a>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
