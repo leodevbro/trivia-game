@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 
 import { fetchStatements } from "../actions/statementsActions";
 import { GoButton } from "../components/GoButton";
+import { useHistory } from "react-router";
 
 export const difficultyLevels: ["easy", "hard"] = ["easy", "hard"];
 
@@ -15,15 +16,22 @@ const WelcomePage: React.FC<{}> = () => {
     const dispatch = useDispatch();
 
     const [difficultyLevel, setDifficultyLevel] = useState(0);
-    const [amount, setAmount] = useState(0);
+    const [amount, setAmount] = useState(10);
 
     const onAmountChange: ChangeEventHandler<HTMLInputElement> = (e) => {
         const val = e.target.value;
         const re = /^[0-9\b]+$/;
-        if (val === "" || re.test(val)) {
+        if (val === "") {
             setAmount(Number(val));
+        } else if (re.test(val)) {
+            let nVal = Number(val);
+            nVal = Math.max(nVal, 1);
+            nVal = Math.min(nVal, 10);
+            setAmount(nVal);
         }
     };
+
+    const history = useHistory();
 
     return (
         <div className={"backgroundOfWelcome"}>
@@ -83,14 +91,18 @@ const WelcomePage: React.FC<{}> = () => {
 
                 <GoButton
                     text={"Start"}
-                    to={"/playing"}
                     myClass={"startButton"}
                     myFn={() => {
-                        fetchStatements({
-                            dispatch,
-                            difficulty: difficultyLevels[difficultyLevel],
-                            amount,
-                        });
+                        if (amount < 1 || amount > 10) {
+                            alert("Please enter amount between 1 and 10");
+                        } else {
+                            fetchStatements({
+                                dispatch,
+                                difficulty: difficultyLevels[difficultyLevel],
+                                amount,
+                            });
+                            history.push("/playing");
+                        }
                     }}
                 />
             </div>

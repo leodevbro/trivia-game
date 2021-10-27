@@ -9,9 +9,11 @@ import { GoButton } from "../components/GoButton";
 import { emptyStatementsArray } from "../actions/statementsActions";
 import { AnswerItem } from "../components/AnswerItem";
 import { ScoreAsStars } from "../components/ScoreAsStars";
+import { useHistory } from "react-router";
 
 const ScorePage: React.FC<{}> = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
     const statements = useSelector(
         (state: { statements: IStatementsState }) => state.statements.statements
     );
@@ -54,9 +56,11 @@ const ScorePage: React.FC<{}> = () => {
                 </div>
                 <GoButton
                     text={"Play Again"}
-                    to={"/"}
                     myClass={"playAgainButton"}
-                    myFn={() => dispatch(emptyStatementsArray())}
+                    myFn={() => {
+                        dispatch(emptyStatementsArray());
+                        history.push("/");
+                    }}
                 />
             </div>
         </div>
