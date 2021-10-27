@@ -4,6 +4,11 @@ import triviaSrc from "../images/raster/trivia.png";
 import { ReactComponent as WinCupIcon } from "../images/vector/win-cup.svg";
 import { ReactComponent as StarIcon } from "../images/vector/star-circle.svg";
 import { ReactComponent as ArrowDownIcon } from "../images/vector/arrow-down.svg";
+
+import { ReactComponent as Ve001 } from "../images/vector/ve001.svg";
+import { ReactComponent as Ve002 } from "../images/vector/ve002.svg";
+import { ReactComponent as Ve003 } from "../images/vector/ve003.svg";
+import { ReactComponent as Ve004 } from "../images/vector/ve004.svg";
 import { useDispatch } from "react-redux";
 
 import { fetchStatements } from "../actions/statementsActions";
@@ -35,6 +40,15 @@ const WelcomePage: React.FC<{}> = () => {
 
     return (
         <div className={"backgroundOfWelcome"}>
+            <div className={"veLeft"}>
+                <Ve001 className={"ve001"} />
+                <Ve002 className={"ve002"} />
+            </div>
+            <div className={"veRight"}>
+                <Ve003 className={"ve003"} />
+                <Ve004 className={"ve004"} />
+            </div>
+
             <div className={"introBox"}>
                 <h1>Welcome to the</h1>
                 <img

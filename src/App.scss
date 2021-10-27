@@ -8,6 +8,7 @@ html {
 }
 
 html {
+    height: 100%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -31,11 +32,14 @@ html {
 }
 body {
     min-height: 100%;
+    min-height: 100vh;
     position: relative;
 }
 
 #root {
-    height: 100vh;
+    // height: 100vh;
+    // width: 100vw;
+    min-height: 100%;
     position: relative;
 }
 
@@ -171,14 +175,57 @@ body {
 
     position: relative;
     // height: 900px;
-    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+
+    .veLeft {
+        left: 0;
+        top: 0;
+        position: fixed;
+        height: 100vh;
+        .ve001 {
+            position: absolute;
+            left: min(0px, calc(-50px + 5vw));
+            top: -250px;
+            width: max(90px, 10vw);
+
+        }
+        .ve002 {
+            position: absolute;
+            left: 0;
+            bottom: min(-10px, calc(-180px + 8vw));
+        }
+    }
+
+    .veRight {
+        right: 0;
+        top: 0;
+        position: fixed;
+        height: 100vh;
+        .ve003 {
+            position: absolute;
+            right: min(0px, calc(-50px + 5vw));
+            width: min(100px, max(70px, 8vw));
+            top: -70px
+
+        }
+        .ve004 {
+            position: absolute;
+            right: min(0px, calc(-50px + 5vw));
+            width: min(80px, max(70px, 7vw));
+            bottom: -200px;
+        }
+    }
 
     .introBox {
+        margin-top: auto;
+        margin-bottom: auto;
         position: relative;
         width: 700px;
         max-width: 100%;
         display: flex;
         justify-content: center;
+        // margin-top: calc(150px);
         align-items: center;
         flex-wrap: no-wrap;
         flex-direction: column;
@@ -350,18 +397,22 @@ body {
     height: 100%;
     display: flex;
     justify-content: center;
+    min-height: 100vh;
     .playBox {
         position: relative;
         width: 700px;
         max-width: 84%;
         display: flex;
-        justify-content: center;
+        // justify-content: center;
+        margin-top: auto;
+        margin-bottom: auto;
+        // margin-top: 5vw;
         flex-direction: column;
         align-items: center;
         h1 {
-            min-height: 15vw;
+            min-height:  min(150px, 13vw);
             margin-top: 0;
-            font-size: 70px;
+
             font-style: normal;
             font-weight: 700;
             letter-spacing: 0.05em;
@@ -369,7 +420,7 @@ body {
 
             color: #4953be;
 
-            font-size: min(70px, 6vw);
+            font-size: min(50px, 6vw);
             @media screen and (max-width: 750px) {
                 font-size: max(26px, 6vw);
             }
@@ -425,7 +476,7 @@ body {
         }
 
         .statement {
-            min-height: 200px;
+            min-height: 250px;
             width: 631px;
             max-width: 100%;
             display: flex;
@@ -518,13 +569,16 @@ body {
     height: 100%;
     display: flex;
     justify-content: center;
+    min-height: 100vh;
 
     .columnBox {
         position: relative;
         width: 700px;
         max-width: 93%;
         display: flex;
-        justify-content: center;
+        // justify-content: center;
+        margin-top: auto;
+        margin-bottom: auto;
         flex-direction: column;
         align-items: center;
         .scoreBriefInfo {
