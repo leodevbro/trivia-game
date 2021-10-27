@@ -3,6 +3,7 @@ import React, { ChangeEventHandler, useState } from "react";
 import triviaSrc from "../images/raster/trivia.png";
 import { ReactComponent as WinCupIcon } from "../images/vector/win-cup.svg";
 import { ReactComponent as StarIcon } from "../images/vector/star-circle.svg";
+import { ReactComponent as ArrowDownIcon } from "../images/vector/arrow-down.svg";
 import { useDispatch } from "react-redux";
 
 import { fetchStatements } from "../actions/statementsActions";
@@ -41,25 +42,28 @@ const WelcomePage: React.FC<{}> = () => {
                             </span>
                             <span className={"infoTitle"}>Difficulty</span>
                         </div>
-                        <select
-                            className={"difficultySelect"}
-                            value={difficultyLevel}
-                            id={"selectLevel"}
-                            onChange={(e) => {
-                                const val = e.target.value;
-                                setDifficultyLevel(Number(val));
-                            }}
-                        >
-                            {difficultyLevels.map((renderValue, i) => (
-                                <option
-                                    key={i}
-                                    value={String(i)}
-                                    className={"opt"}
-                                >
-                                    {renderValue}
-                                </option>
-                            ))}
-                        </select>
+                        <div className={"containerOfSelect"}>
+                            <ArrowDownIcon className={"arrowDownIcon"} />
+                            <select
+                                className={"difficultySelect"}
+                                value={difficultyLevel}
+                                id={"selectLevel"}
+                                onChange={(e) => {
+                                    const val = e.target.value;
+                                    setDifficultyLevel(Number(val));
+                                }}
+                            >
+                                {difficultyLevels.map((renderValue, i) => (
+                                    <option
+                                        key={i}
+                                        value={String(i)}
+                                        className={"opt"}
+                                    >
+                                        {renderValue}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
                     </div>
                     <div className={"cont2"}>
                         <div className={"info"}>
