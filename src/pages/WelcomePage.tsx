@@ -15,6 +15,8 @@ import { fetchStatements } from "../actions/statementsActions";
 import { GoButton } from "../components/GoButton";
 import { useHistory } from "react-router";
 
+import WelcomeStyles from "./WelcomeStyles.module.scss";
+
 export const difficultyLevels: ["easy", "hard"] = ["easy", "hard"];
 
 const WelcomePage: React.FC<{}> = () => {
@@ -39,35 +41,41 @@ const WelcomePage: React.FC<{}> = () => {
     const history = useHistory();
 
     return (
-        <div className={"backgroundOfWelcome"}>
-            <div className={"veLeft"}>
-                <Ve001 className={"ve001"} />
-                <Ve002 className={"ve002"} />
+        <div className={WelcomeStyles.backgroundOfWelcome}>
+            <div className={WelcomeStyles.veLeft}>
+                <Ve001 className={WelcomeStyles.ve001} />
+                <Ve002 className={WelcomeStyles.ve002} />
             </div>
-            <div className={"veRight"}>
-                <Ve003 className={"ve003"} />
-                <Ve004 className={"ve004"} />
+            <div className={WelcomeStyles.veRight}>
+                <Ve003 className={WelcomeStyles.ve003} />
+                <Ve004 className={WelcomeStyles.ve004} />
             </div>
 
-            <div className={"introBox"}>
+            <div className={WelcomeStyles.introBox}>
                 <h1>Welcome to the</h1>
                 <img
-                    className={"superTitle"}
+                    className={WelcomeStyles.superTitle}
                     src={triviaSrc}
                     alt={"Game Title"}
                 />
-                <div className={"inputContainer"}>
-                    <div className={"cont1"}>
-                        <div className={"info"}>
+                <div className={WelcomeStyles.inputContainer}>
+                    <div className={WelcomeStyles.cont1}>
+                        <div className={WelcomeStyles.info}>
                             <span>
-                                <WinCupIcon className={"infoIcon winCupIcon"} />
+                                <WinCupIcon
+                                    className={`${WelcomeStyles.infoIcon} ${WelcomeStyles.winCupIcon}`}
+                                />
                             </span>
-                            <span className={"infoTitle"}>Difficulty</span>
+                            <span className={WelcomeStyles.infoTitle}>
+                                Difficulty
+                            </span>
                         </div>
-                        <div className={"containerOfSelect"}>
-                            <ArrowDownIcon className={"arrowDownIcon"} />
+                        <div className={WelcomeStyles.containerOfSelect}>
+                            <ArrowDownIcon
+                                className={WelcomeStyles.arrowDownIcon}
+                            />
                             <select
-                                className={"difficultySelect"}
+                                className={WelcomeStyles.difficultySelect}
                                 value={difficultyLevel}
                                 id={"selectLevel"}
                                 onChange={(e) => {
@@ -79,7 +87,7 @@ const WelcomePage: React.FC<{}> = () => {
                                     <option
                                         key={i}
                                         value={String(i)}
-                                        className={"opt"}
+                                        className={WelcomeStyles.opt}
                                     >
                                         {renderValue}
                                     </option>
@@ -87,15 +95,19 @@ const WelcomePage: React.FC<{}> = () => {
                             </select>
                         </div>
                     </div>
-                    <div className={"cont2"}>
-                        <div className={"info"}>
+                    <div className={WelcomeStyles.cont2}>
+                        <div className={WelcomeStyles.info}>
                             <div>
-                                <StarIcon className={"infoIcon starIcon"} />
+                                <StarIcon
+                                    className={`${WelcomeStyles.infoIcon} ${WelcomeStyles.starIcon}`}
+                                />
                             </div>
-                            <div className={"infoTitle"}>Amount</div>
+                            <div className={WelcomeStyles.infoTitle}>
+                                Amount
+                            </div>
                         </div>
                         <input
-                            className={"amountInput"}
+                            className={WelcomeStyles.amountInput}
                             type={"text"}
                             value={amount}
                             onChange={onAmountChange}
