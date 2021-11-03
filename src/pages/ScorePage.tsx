@@ -1,6 +1,5 @@
 import React from "react";
 
-import { ReactComponent as ProfileIcon } from "../images/vector/profile.svg";
 
 import { useDispatch, useSelector } from "react-redux";
 import { IStatementsState } from "../reducers/statementsReducer";
@@ -11,6 +10,7 @@ import { AnswerItem } from "../components/AnswerItem";
 import { ScoreAsStars } from "../components/ScoreAsStars";
 import { useHistory } from "react-router";
 import ScoresStyles from "./ScoresStyles.module.scss";
+import { ScoreBrief } from "../components/ScoreBrief";
 
 const ScorePage: React.FC<{}> = () => {
     const dispatch = useDispatch();
@@ -33,18 +33,8 @@ const ScorePage: React.FC<{}> = () => {
     return (
         <div className={ScoresStyles.backgroundOfScore}>
             <div className={ScoresStyles.columnBox}>
-                <div className={ScoresStyles.scoreBriefInfo}>
-                    <div className={ScoresStyles.profileIconFrame}>
-                        <ProfileIcon className={ScoresStyles.profileIcon} />
-                    </div>
-                    <div className={ScoresStyles.numbering}>
-                        <div className={ScoresStyles.youScored}>You scored</div>
-                        <div className={ScoresStyles.numbers}>
-                            <span className={ScoresStyles.score}>{score}</span>/
-                            <span className={ScoresStyles.len}>{len}</span>
-                        </div>
-                    </div>
-                </div>
+                <ScoreBrief score={score} len={len} />
+
                 <ScoreAsStars percentage={(100 * score) / len} count={len} />
 
                 <div className={ScoresStyles.allAnswers}>
