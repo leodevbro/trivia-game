@@ -6,6 +6,8 @@ import { answerStatement } from "../actions/statementsActions";
 import { useHistory } from "react-router-dom";
 import GameplayStyles from "./GameplayStyles.module.scss";
 import { CoolFiller } from "../components/CoolFiller";
+import { ButtonFalse } from "../components/ButtonFalse";
+import { ButtonTrue } from "../components/ButtonTrue";
 
 const GameplayPage: React.FC<{}> = () => {
     const history = useHistory();
@@ -50,18 +52,11 @@ const GameplayPage: React.FC<{}> = () => {
                 </div>
 
                 <div className={GameplayStyles.answer}>
-                    <div
-                        className={GameplayStyles.buttonTrue}
-                        onClick={() => handleAnswer(true)}
-                    >
-                        TRUE
-                    </div>
-                    <div
-                        className={GameplayStyles.buttonFalse}
-                        onClick={() => handleAnswer(false)}
-                    >
-                        FALSE
-                    </div>
+                    <ButtonTrue fn={() => handleAnswer(true)} text={"TRUE"} />
+                    <ButtonFalse
+                        fn={() => handleAnswer(false)}
+                        text={"FALSE"}
+                    />
                 </div>
             </div>
         </div>
