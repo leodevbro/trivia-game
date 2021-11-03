@@ -42,45 +42,6 @@
             color: #4953be;
         }
 
-        .coolFiller {
-            margin: 30px 5px;
-            .numbers {
-                color: #4953be;
-                .score {
-                    color: #ff7878;
-                    font-weight: 700;
-                    font-size: 30px;
-                }
-                .slash {
-                    font-size: 25px;
-                    font-weight: 700;
-                }
-                .len {
-                    color: #4953be;
-                    font-weight: 500;
-                    font-size: 25px;
-                }
-            }
-            .fullLine {
-                background-color: #dbdeff;
-                height: 5px;
-                max-width: 406px;
-                width: 88vw;
-
-                border-radius: 20px;
-
-                .fillerLine {
-                    height: 100%;
-                    border-radius: 20px;
-                    background: linear-gradient(
-                        180deg,
-                        #ff7878 0%,
-                        #ff7878 100%
-                    );
-                }
-            }
-        }
-
         .statement {
             min-height: 250px;
             width: 631px;

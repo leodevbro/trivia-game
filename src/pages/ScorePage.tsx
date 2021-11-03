@@ -5,7 +5,7 @@ import { IStatementsState } from "../reducers/statementsReducer";
 
 import { GoButton } from "../components/GoButton";
 import { emptyStatementsArray } from "../actions/statementsActions";
-import { AnswerItem } from "../components/AnswerItem";
+
 import { ScoreAsStars } from "../components/ScoreAsStars";
 import { useHistory } from "react-router";
 import ScoresStyles from "./ScoresStyles.module.scss";

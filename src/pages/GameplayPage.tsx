@@ -5,6 +5,7 @@ import { IStatementsState } from "../reducers/statementsReducer";
 import { answerStatement } from "../actions/statementsActions";
 import { useHistory } from "react-router-dom";
 import GameplayStyles from "./GameplayStyles.module.scss";
+import { CoolFiller } from "../components/CoolFiller";
 
 const GameplayPage: React.FC<{}> = () => {
     const history = useHistory();
@@ -35,8 +36,6 @@ const GameplayPage: React.FC<{}> = () => {
         return <span className={"spinner"}></span>; // spinner is meant to be global class
     }
 
-    const percentage = ((currStatementIndex + 1) / len) * 100;
-
     const currSM = statements[currStatementIndex];
     return (
         <div className={GameplayStyles.backgroundOfGameplay}>
@@ -44,22 +43,7 @@ const GameplayPage: React.FC<{}> = () => {
                 <h1>{currSM.category}</h1>
                 <div className={GameplayStyles.levelName}>Level 1</div>
 
-                <div className={GameplayStyles.coolFiller}>
-                    <div className={GameplayStyles.numbers}>
-                        <span className={GameplayStyles.score}>
-                            {currStatementIndex + 1}
-                        </span>
-                        <span className={GameplayStyles.slash}>/</span>
-                        <span className={GameplayStyles.len}>{len}</span>
-                    </div>
-
-                    <div className={GameplayStyles.fullLine}>
-                        <div
-                            style={{ width: `${percentage}%` }}
-                            className={GameplayStyles.fillerLine}
-                        ></div>
-                    </div>
-                </div>
+                <CoolFiller len={len} currStatementIndex={currStatementIndex} />
 
                 <div className={GameplayStyles.statement}>
                     {currSM.question}
