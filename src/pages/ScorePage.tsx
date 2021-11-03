@@ -14,11 +14,17 @@ import { useHistory } from "react-router";
 const ScorePage: React.FC<{}> = () => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const statements = useSelector(
-        (state: { statements: IStatementsState }) => state.statements.statements
+    const statementsBox = useSelector(
+        (state: { statements: IStatementsState }) => state.statements
     );
+    const statements = statementsBox.statements;
+
 
     const len = statements.length;
+
+    if (len === 0) {
+        history.push("/");
+    }
     const correctItems = statements.filter(
         (x) => x.correct_answer === x.answerOfUser
     );
