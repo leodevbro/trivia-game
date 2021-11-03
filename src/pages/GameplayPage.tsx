@@ -8,9 +8,10 @@ import { useHistory } from "react-router-dom";
 const GameplayPage: React.FC<{}> = () => {
     const history = useHistory();
     const dispatch = useDispatch();
-    const statements = useSelector(
-        (state: { statements: IStatementsState }) => state.statements.statements
+    const statementsBox = useSelector(
+        (state: { statements: IStatementsState }) => state.statements
     );
+    const statements = statementsBox.statements;
     const len = statements.length;
 
     const [currStatementIndex, setCurrStatementIndex] = useState(0);
@@ -25,7 +26,13 @@ const GameplayPage: React.FC<{}> = () => {
         }
     };
 
-    if (len === 0) return <span className={"spinner"}></span>;
+    if (!statementsBox.loading && len === 0) {
+        history.push("/");
+    }
+
+    if (len === 0) {
+        return <span className={"spinner"}></span>;
+    }
 
     const percentage = ((currStatementIndex + 1) / len) * 100;
 
