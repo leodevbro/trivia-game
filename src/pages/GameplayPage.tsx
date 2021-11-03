@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { IStatementsState } from "../reducers/statementsReducer";
 import { answerStatement } from "../actions/statementsActions";
 import { useHistory } from "react-router-dom";
+import GameplayStyles from "./GameplayStyles.module.scss";
 
 const GameplayPage: React.FC<{}> = () => {
     const history = useHistory();
@@ -31,46 +32,48 @@ const GameplayPage: React.FC<{}> = () => {
     }
 
     if (len === 0) {
-        return <span className={"spinner"}></span>;
+        return <span className={"spinner"}></span>; // spinner is meant to be global class
     }
 
     const percentage = ((currStatementIndex + 1) / len) * 100;
 
     const currSM = statements[currStatementIndex];
     return (
-        <div className={"backgroundOfGameplay"}>
-            <div className={"playBox"}>
+        <div className={GameplayStyles.backgroundOfGameplay}>
+            <div className={GameplayStyles.playBox}>
                 <h1>{currSM.category}</h1>
-                <div className={"levelName"}>Level 1</div>
+                <div className={GameplayStyles.levelName}>Level 1</div>
 
-                <div className={"coolFiller"}>
-                    <div className={"numbers"}>
-                        <span className={"score"}>
+                <div className={GameplayStyles.coolFiller}>
+                    <div className={GameplayStyles.numbers}>
+                        <span className={GameplayStyles.score}>
                             {currStatementIndex + 1}
                         </span>
-                        <span className={"slash"}>/</span>
-                        <span className={"len"}>{len}</span>
+                        <span className={GameplayStyles.slash}>/</span>
+                        <span className={GameplayStyles.len}>{len}</span>
                     </div>
 
-                    <div className={"fullLine"}>
+                    <div className={GameplayStyles.fullLine}>
                         <div
                             style={{ width: `${percentage}%` }}
-                            className={"fillerLine"}
+                            className={GameplayStyles.fillerLine}
                         ></div>
                     </div>
                 </div>
 
-                <div className={"statement"}>{currSM.question}</div>
+                <div className={GameplayStyles.statement}>
+                    {currSM.question}
+                </div>
 
-                <div className={"answer"}>
+                <div className={GameplayStyles.answer}>
                     <div
-                        className={"buttonTrue"}
+                        className={GameplayStyles.buttonTrue}
                         onClick={() => handleAnswer(true)}
                     >
                         TRUE
                     </div>
                     <div
-                        className={"buttonFalse"}
+                        className={GameplayStyles.buttonFalse}
                         onClick={() => handleAnswer(false)}
                     >
                         FALSE
