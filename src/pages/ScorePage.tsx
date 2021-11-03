@@ -10,6 +10,7 @@ import { emptyStatementsArray } from "../actions/statementsActions";
 import { AnswerItem } from "../components/AnswerItem";
 import { ScoreAsStars } from "../components/ScoreAsStars";
 import { useHistory } from "react-router";
+import ScoresStyles from "./ScoresStyles.module.scss";
 
 const ScorePage: React.FC<{}> = () => {
     const dispatch = useDispatch();
@@ -18,7 +19,6 @@ const ScorePage: React.FC<{}> = () => {
         (state: { statements: IStatementsState }) => state.statements
     );
     const statements = statementsBox.statements;
-
 
     const len = statements.length;
 
@@ -31,23 +31,23 @@ const ScorePage: React.FC<{}> = () => {
     const score = correctItems.length;
 
     return (
-        <div className={"backgroundOfScore"}>
-            <div className={"columnBox"}>
-                <div className={"scoreBriefInfo"}>
-                    <div className={"profileIconFrame"}>
-                        <ProfileIcon className={"profileIcon"} />
+        <div className={ScoresStyles.backgroundOfScore}>
+            <div className={ScoresStyles.columnBox}>
+                <div className={ScoresStyles.scoreBriefInfo}>
+                    <div className={ScoresStyles.profileIconFrame}>
+                        <ProfileIcon className={ScoresStyles.profileIcon} />
                     </div>
-                    <div className={"numbering"}>
-                        <div className={"youScored"}>You scored</div>
-                        <div className={"numbers"}>
-                            <span className={"score"}>{score}</span>/
-                            <span className={"len"}>{len}</span>
+                    <div className={ScoresStyles.numbering}>
+                        <div className={ScoresStyles.youScored}>You scored</div>
+                        <div className={ScoresStyles.numbers}>
+                            <span className={ScoresStyles.score}>{score}</span>/
+                            <span className={ScoresStyles.len}>{len}</span>
                         </div>
                     </div>
                 </div>
                 <ScoreAsStars percentage={(100 * score) / len} count={len} />
 
-                <div className={"allAnswers"}>
+                <div className={ScoresStyles.allAnswers}>
                     {statements.map((statement, i) => {
                         const isCorrect =
                             statement.answerOfUser === statement.correct_answer;

@@ -1,0 +1,78 @@
+.backgroundOfScore {
+    background-color: #4751c0;
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+
+    .columnBox {
+        position: relative;
+        width: 700px;
+        max-width: 93%;
+        display: flex;
+        // justify-content: center;
+        margin-top: auto;
+        margin-bottom: auto;
+        flex-direction: column;
+        align-items: center;
+        .scoreBriefInfo {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            .profileIconFrame {
+                // width: max(25px, min(35px, 8vw));
+                width: max(32px, min(52px, 8vw));
+                height: max(32px, min(52px, 8vw));
+                position: relative;
+                background-color: white;
+                border-radius: 100px;
+                .profileIcon {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .numbering {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: nowrap;
+                font-size: 30px;
+                font-size: max(20px, min(30px, 5vw));
+                font-style: normal;
+                font-weight: 500;
+                line-height: 25px;
+
+                color: white;
+
+                .youScored {
+                    margin: 20px;
+                }
+
+                .numbers {
+                    color: white;
+                    .score {
+                        color: #ff7878;
+                        font-weight: 700;
+                        font-size: 30px;
+                    }
+                    .len {
+                        color: white;
+                        font-weight: 500;
+                        font-size: max(20px, min(25px, 5vw));
+                    }
+                }
+            }
+        }
+        .allAnswers {
+            max-height: 500px;
+            max-width: 100%;
+            overflow-y: auto;
+            padding: 10px;
+            scrollbar-width: thin;
+        }
+    }
+}
