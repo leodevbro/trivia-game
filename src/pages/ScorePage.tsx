@@ -1,6 +1,5 @@
 import React from "react";
 
-
 import { useDispatch, useSelector } from "react-redux";
 import { IStatementsState } from "../reducers/statementsReducer";
 
@@ -11,6 +10,7 @@ import { ScoreAsStars } from "../components/ScoreAsStars";
 import { useHistory } from "react-router";
 import ScoresStyles from "./ScoresStyles.module.scss";
 import { ScoreBrief } from "../components/ScoreBrief";
+import { AllResults } from "../components/AllResults";
 
 const ScorePage: React.FC<{}> = () => {
     const dispatch = useDispatch();
@@ -37,19 +37,7 @@ const ScorePage: React.FC<{}> = () => {
 
                 <ScoreAsStars percentage={(100 * score) / len} count={len} />
 
-                <div className={ScoresStyles.allAnswers}>
-                    {statements.map((statement, i) => {
-                        const isCorrect =
-                            statement.answerOfUser === statement.correct_answer;
-                        return (
-                            <AnswerItem
-                                key={i}
-                                text={statement.question}
-                                isCorrect={isCorrect}
-                            />
-                        );
-                    })}
-                </div>
+                <AllResults statements={statements} />
                 <GoButton
                     text={"Play Again"}
                     myClass={"playAgainButton"}
