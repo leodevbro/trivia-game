@@ -188,7 +188,6 @@ body {
             left: min(0px, calc(-50px + 5vw));
             top: -250px;
             width: max(90px, 10vw);
-
         }
         .ve002 {
             position: absolute;
@@ -206,8 +205,7 @@ body {
             position: absolute;
             right: min(0px, calc(-50px + 5vw));
             width: min(100px, max(70px, 8vw));
-            top: -70px
-
+            top: -70px;
         }
         .ve004 {
             position: absolute;
@@ -410,7 +408,7 @@ body {
         flex-direction: column;
         align-items: center;
         h1 {
-            min-height:  min(150px, 13vw);
+            min-height: min(150px, 13vw);
             margin-top: 0;
 
             font-style: normal;
@@ -648,18 +646,28 @@ body {
     }
 }
 
-.spinner:before {
-    content: "";
-    box-sizing: border-box;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 20px;
-    height: 20px;
-    margin-top: -10px;
-    margin-left: -10px;
-    border-radius: 50%;
-    border-top: 2px solid #07d;
-    border-right: 2px solid transparent;
-    animation: spinner 0.6s linear infinite;
+.spinner {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:before {
+        content: "";
+        box-sizing: border-box;
+        position: relative;
+
+        width: 50px;
+        height: 50px;
+
+        border-radius: 50%;
+        border-top: 4px solid #07d;
+        border-right: 4px solid transparent;
+        animation: spinner 0.6s linear infinite;
+    }
 }

@@ -45,7 +45,7 @@ const statementsReducer = (
             const currPayLoad = action.payload as IAnswer;
             return {
                 loading: false,
-                hasErrors: true,
+                hasErrors: false,
                 statements: state.statements.map((statement, i) => {
                     if (currPayLoad.statementIndex === i) {
                         return {
