@@ -1,0 +1,15 @@
+.scoreAsStars {
+    margin: 10px 5px 30px 5px;
+    .starIcon {
+        width: max(25px, min(35px, 8vw));
+        &.scored {
+            * {
+                fill: #ff7c7c;
+            }
+        }
+
+        &.unScored {
+            //
+        }
+    }
+}

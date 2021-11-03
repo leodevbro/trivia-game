@@ -1,5 +1,6 @@
 import React from "react";
 import { ReactComponent as StarIcon } from "../images/vector/star.svg";
+import ScoreAsStarsStyles from "./ScoreAsStarsStyles.module.scss";
 
 export const ScoreAsStars: React.FC<{
     percentage: number;
@@ -8,16 +9,20 @@ export const ScoreAsStars: React.FC<{
     const maxCount = 10;
     if (count > maxCount) count = maxCount;
     const scoredCount = Math.floor((count * percentage) / 100);
+
     return (
-        <div className={"scoreAsStars"}>
+        <div className={ScoreAsStarsStyles.scoreAsStars}>
             {Array(count)
                 .fill(0)
                 .map((_, index) => {
+                    const scoreBoolStyle =
+                        index + 1 <= scoredCount
+                            ? ScoreAsStarsStyles.scored
+                            : ScoreAsStarsStyles.unScored;
+
                     return (
                         <StarIcon
-                            className={`starIcon ${
-                                index + 1 <= scoredCount ? "scored" : "unScored"
-                            }`}
+                            className={`${ScoreAsStarsStyles.starIcon} ${scoreBoolStyle}`}
                             key={index}
                         />
                     );

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link as div } from "react-router-dom";
+import GoButtonStyles from "./GoButtonStyles.module.scss";
 
 export const GoButton: React.FC<{
     myClass: string;
@@ -8,12 +9,12 @@ export const GoButton: React.FC<{
 }> = ({ myClass, myFn, text }) => {
     return (
         <div
-            className={`goButton ${myClass}`}
+            className={`${GoButtonStyles.goButton} ${GoButtonStyles[myClass]}`}
             onClick={() => {
                 myFn();
             }}
         >
-            <div className={"subShape"}>{text}</div>
+            <div className={GoButtonStyles.subShape}>{text}</div>
         </div>
     );
 };

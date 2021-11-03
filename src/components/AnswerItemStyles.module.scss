@@ -1,0 +1,50 @@
+.answerItem {
+    display: flex;
+    min-height: 79px;
+    width: 620px;
+    max-width: 100%;
+
+    margin-bottom: 24px;
+
+    border-radius: 14px;
+
+    padding: 10px 20px;
+
+    &.correct {
+        background: #fffbfa;
+    }
+
+    &.incorrect {
+        background: #ffdbdb;
+    }
+
+    .text {
+        display: flex;
+        text-align: center;
+        align-items: center;
+
+        width: calc(100% - 30px);
+        height: 100%;
+
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+
+        color: #464faccb;
+
+        margin-right: 20px;
+    }
+
+    .iconBox {
+        width: 20px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &.correct {
+        }
+        &.incorrect {
+        }
+    }
+}
